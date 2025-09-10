@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Lavender Deaconess – Retro Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* -------------------------------------------------------------
+   GLOBAL SETTINGS
+   ------------------------------------------------------------- */
+html,body{margin:0;padding:0;height:100%;background:#000; /* solid black */}
+
+/* -------------------------------------------------------------
+   GRID LAYOUT – sidebar + main area
+   ------------------------------------------------------------- */
+.container{
+  display:grid;
+  grid-template-columns:260px 1fr;   /* sidebar width */
+  height:100vh;
+}
+
+/* -------------------------------------------------------------
+   SIDEBAR – lavender background, holds live chat
+   ------------------------------------------------------------- */
+.sidebar{
+  background:#E6E6FA;                 /* lavender */
+  color:#111;
+  padding:15px;
+  overflow-y:auto;
+  border-right:4px double #fff;
+}
+.sidebar h2{
+  font-size:1.4em;
+  margin:0 0 .5em;
+  color:#4B0082;                     /* darker purple for contrast */
+  text-shadow:1px 1px 0 #fff;
+}
+.sidebar a{
+  color:#4B0082;
+  text-decoration:none;
+}
+.sidebar a:hover{
+  text-decoration:underline;
+}
+
+/* -------------------------------------------------------------
+   MAIN CONTENT – white “paper” area on top of black bg
+   ------------------------------------------------------------- */
+.main{
+  background:#fff;
+  padding:20px;
+  overflow-y:auto;
+}
+
+/* -------------------------------------------------------------
+   BLINGEE‑STYLE HEADER
+   ------------------------------------------------------------- */
+.header{
+  background:#000;                                   /* keep black behind */
+  color:#E6E6FA;                                     /* lavender text */
+  font-family:"Comic Sans MS",cursive,Arial,sans-serif;
+  font-size:2.8em;
+  font-weight:bold;
+  text-align:center;
+  padding:20px 0;
+  text-shadow:
+     0 0 5px #fff,
+     0 0 10px #fff,
+     0 0 15px #E6E6FA,
+     0 0 20px #E6E6FA,
+     0 0 30px #E6E6FA,
+     0 0 40px #E6E6FA;
+  border-bottom:3px ridge #fff;
+}
+
+/* -------------------------------------------------------------
+   ARTICLE BLOCK
+   ------------------------------------------------------------- */
+.article{
+  margin-top:20px;
+  border:2px outset #999;
+  background:#f9f9f9;
+  padding:15px;
+}
+.article h2{
+  font-size:1.8em;
+  margin:0 0 .3em;
+  color:#003366;
+}
+.article p{
+  line-height:1.5;
+}
+
+/* -------------------------------------------------------------
+   COMMENTS SECTION
+   ------------------------------------------------------------- */
+.comments{
+  margin-top:30px;
+  border:2px inset #666;
+  background:#fff;
+  padding:15px;
+}
+.comments h3{
+  margin-top:0;
+  font-size:1.4em;
+  color:#003366;
+}
+
+/* -------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------- */
+.footer{
+  margin-top:30px;
+  text-align:center;
+  font-size:.9em;
+  color:#555;
+  border-top:2px dotted #aaa;
+  padding-top:10px;
+}
+
+/* -------------------------------------------------------------
+   BUTTONS (used in sidebar navigation)
+   ------------------------------------------------------------- */
+.button{
+  display:inline-block;
+  background:#ffcc00;
+  color:#000;
+  padding:4px 8px;
+  margin:2px;
+  border:2px outset #fff;
+  font-weight:bold;
+  cursor:pointer;
+  text-decoration:none;
+}
+.button:hover{
+  background:#ffdd33;
+}
+
+/* -------------------------------------------------------------
+   RESPONSIVE FALLBACK – stack sidebar under narrow screens
+   ------------------------------------------------------------- */
+@media(max-width:600px){
+  .container{grid-template-columns:1fr;}
+  .sidebar{border-right:none;border-bottom:4px double #fff;}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- ====================  LEFT SIDEBAR (Live Chat) ==================== -->
+  <aside class="sidebar">
+    <h2>Live Chat</h2>
+
+    <!-- --------------------------------------------------------------
+         Insert your live‑chat widget script/iframe here.
+         Example: Tawk.to (replace YOUR_TAWKTO_ID)
+         --------------------------------------------------------------- -->
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/68c172702f0e2a192182f2c0/1j4pqe290';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <hr style="border-color:#555;margin:15px 0;">
+    <nav>
+      <a class="button" href="#">Home</a>
+      <a class="button" href="#">Archive</a>
+      <a class="button" href="#">About</a>
+      <a class="button" href="#">Contact</a>
+    </nav>
+  </aside>
+
+  <!-- ====================  MAIN CONTENT ==================== -->
+  <main class="main">
+    <header class="header">
+      The Lavender Deaconess
+    </header>
+
+    <section class="article">
+      <h2>Week 1 – The First Bloom</h2>
+      <p>
+        Welcome to the inaugural post of <strong>The Lavender Deaconess</strong>. 
+        In true early‑2000s fashion, we’ll start with a bold statement, a splash of color,
+        and a promise to deliver fresh musings every week.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. 
+        Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh 
+        elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed 
+        augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.
+      </p>
+    </section>
+
+    <!-- -------------------- UTTERANCES COMMENT WIDGET -------------------- -->
+    <section class="comments">
+      <h3>Comments</h3>
+      <!-- NOTE: keep the repo value in the form owner/repo (no URL, no .git) -->
+      <script src="https://utteranc.es/client.js"
+              repo="magnoliajean/lavenderdeaconess"
+              issue-term="pathname"
+              theme="github-dark"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </section>
+
+    <footer class="footer">
+      © 1999‑2025 The Lavender Deaconess – All rights reserved.
+    </footer>
+  </main>
+
+</div>
+</body>
+</html>
